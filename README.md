@@ -1,48 +1,51 @@
-# Auto Tab Sorter - Burp Suite Extension
+# Request Categorizer
 
-## Overview
-Auto Tab Sorter is a Burp Suite extension that automatically categorizes HTTP requests based on predefined contexts. It creates separate tabs for different functionalities like Login, Profile, Admin, API, and more, allowing easier analysis and debugging.
+A Burp Suite extension that automatically categorizes HTTP requests from proxy history based on user-defined keywords.
+
+## Description
+
+Request Categorizer allows you to organize HTTP traffic by creating custom categories with specific keywords. The extension scans Burp's proxy history and groups matching requests into separate tabs for easier analysis during security testing.
 
 ## Features
-- Automatically detects request contexts based on URL patterns
-- Creates separate tabs for different request categories
-- Displays categorized requests in a structured table
-- Supports multiple categories, including Login, Signup, Profile, Admin, API, and more
-- Works with Burp Suite Community and Professional editions
 
-## Categories
-The extension sorts requests into the following categories based on URL patterns:
-- **Login**: login, signin
-- **Signup**: signup, register
-- **Profile**: profile, account
-- **Dashboard**: dashboard, home
-- **Search**: search, query
-- **Admin**: admin, backend, panel
-- **API**: api, graphql, rest
-- **Settings**: settings, preferences, config
-- **Files**: upload, download, files
-- **Payments**: payment, checkout, billing
-- **Logs**: logs, debug, trace
-- **Tokens**: token, auth, jwt, session
-- **Other**: Uncategorized requests
+- Create custom categories with user-defined keywords
+- Automatically scan proxy history for matching requests
+- Search through URLs, request bodies, and response bodies
+- View full request/response details with Burp's built-in editor
+- Refresh functionality to rescan history for new categories
+- Handle special characters in keywords safely
 
 ## Installation
-1. Open Burp Suite and navigate to **Extensions** > **BApp Store**.
-2. Download and install **Jython** if not already installed.
-3. Go to **Extensions** > **Add Extension**.
-4. Select **Extension Type** as **Python**.
-5. Browse and select the `auto_tab_sorter.py` file.
-6. Click **Next** and ensure the extension loads successfully.
+
+1. Download the Python script
+2. Open Burp Suite
+3. Go to Extensions > Add
+4. Select "Python" as extension type
+5. Load the script file
+6. The "Categorizer" tab will appear in Burp Suite
 
 ## Usage
-1. Enable **Intercept** and capture requests.
-2. The extension will automatically sort the requests into categorized tabs.
-3. Click on any tab to view the corresponding requests in a structured table.
 
-## Dependencies
-- **Burp Suite** (Community or Professional)
-- **Jython** (Required for Python-based Burp extensions)
+1. Enter a keyword in the "Keyword" field
+2. Enter a name for the tab in the "Tab Name" field
+3. Click "Add Category" to create the category and scan proxy history
+4. Matching requests will appear in the new tab
+5. Click on any request to view full details
+6. Use "Refresh All" to rescan proxy history for all categories
+7. Use "Remove Category" to delete unwanted categories
 
-## License
-This extension is open-source and released under the MIT License.
+## Requirements
 
+- Burp Suite Professional or Community Edition
+- Jython standalone JAR configured in Burp Suite
+
+## Example Keywords
+
+- `api` - Captures API endpoints
+- `login` - Captures authentication requests  
+- `"token":"` - Captures requests with token parameters
+- `admin` - Captures admin panel requests
+
+## Author
+
+Created by Raunak Gupta - Security Researcher & Bug Bounty Hunter
