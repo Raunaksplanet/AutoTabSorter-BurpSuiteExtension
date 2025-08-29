@@ -2,6 +2,10 @@
 
 A Burp Suite extension that automatically categorizes HTTP requests from proxy history based on user-defined keywords.
 
+## Demo Video
+
+📹 [View Demo Video](https://youtu.be/_APSOo81ISQ)
+
 ## Description
 
 Request Categorizer allows you to organize HTTP traffic by creating custom categories with specific keywords. The extension scans Burp's proxy history and groups matching requests into separate tabs for easier analysis during security testing.
